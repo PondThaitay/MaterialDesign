@@ -1,6 +1,7 @@
 package com.cm_smarthome.www.materialdesign;
 
 import android.content.Context;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,11 @@ public class MainActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         toolbar.setLogo(R.mipmap.up);
         setSupportActionBar(toolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        NavigationDrawerFragment navigationDrawerFragment = (NavigationDrawerFragment)
+                getFragmentManager().findFragmentById(R.id.NavigationDrawer);
+        navigationDrawerFragment.setUp(R.id.NavigationDrawer,(DrawerLayout) findViewById(R.id.drawer_layout),toolbar);
     }
 
 
