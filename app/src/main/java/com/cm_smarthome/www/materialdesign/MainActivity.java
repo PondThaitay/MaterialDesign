@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main_appber);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
-        toolbar.setLogo(R.mipmap.up);
+        toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
