@@ -5,8 +5,6 @@
     android:layout_height="wrap_content"
     android:background="#673AB7"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:theme="@style/MyToolBar"
-    app:title="มหาวิทยาลัยพะเยา"
-    app:subtitle="ระบบบริการการศึกษา">
+    app:theme="@style/MyToolBar">
 
 </android.support.v7.widget.Toolbar>

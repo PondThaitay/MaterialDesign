@@ -22,6 +22,8 @@ public class MainActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         toolbar.setLogo(R.drawable.up_logo);
+        toolbar.setTitle("มหาวิทยาลัยพะเยา");
+        toolbar.setSubtitle("ระบบการบริการการศึกษา");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

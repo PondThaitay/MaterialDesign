@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FB8C00"
+    android:background="@android:color/white"
     tools:context="com.cm_smarthome.www.materialdesign.NavigationDrawerFragment">
 
     <ImageView
-        android:layout_marginTop="24dp"
-        android:layout_width="280dp"
+        android:layout_width="290dp"
         android:layout_height="140dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/up_banner" />
