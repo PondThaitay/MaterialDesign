@@ -1,12 +1,15 @@
 package com.cm_smarthome.www.materialdesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -15,10 +18,12 @@ import java.util.List;
  */
 public class VivzAdapter extends RecyclerView.Adapter<VivzAdapter.MyViewHolder>{
 
+    private Context context;
     private LayoutInflater inflater;
     List<information> data = Collections.emptyList();
 
     public VivzAdapter(Context context, List<information> data){
+        this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
     }
@@ -31,7 +36,7 @@ public class VivzAdapter extends RecyclerView.Adapter<VivzAdapter.MyViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         information current = data.get(position);
         holder.title.setText(current.title);
         holder.icon.setImageResource(current.iconId);
@@ -42,13 +47,21 @@ public class VivzAdapter extends RecyclerView.Adapter<VivzAdapter.MyViewHolder>{
         return data.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
         ImageView icon;
         public MyViewHolder(View itemView){
             super(itemView);
+
+            itemView.setOnClickListener(this);
+
             title = (TextView) itemView.findViewById(R.id.listText);
             icon = (ImageView) itemView.findViewById(R.id.listIcon);
+        }
+
+        @Override
+        public void onClick(View v){
+
         }
 
     }
