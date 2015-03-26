@@ -15,16 +15,16 @@
         tools:context="com.cm_smarthome.www.materialdesign.MainActivity"
         android:background="#6dafafaf">
 
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:layout_below="@+id/app_bar"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world"
+            android:layout_below="@+id/app_bar"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
     <fragment
@@ -37,4 +37,3 @@
         tools:layout="@layout/fragment_navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
-

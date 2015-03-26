@@ -1,6 +1,5 @@
 package com.cm_smarthome.www.materialdesign;
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;

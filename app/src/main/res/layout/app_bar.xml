@@ -6,7 +6,7 @@
     android:background="#673AB7"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     app:theme="@style/MyToolBar"
-    app:title="University of Phayao"
-    app:subtitle="มหาวิทยาลัยพะเยา">
+    app:title="มหาวิทยาลัยพะเยา"
+    app:subtitle="ระบบบริการการศึกษา">
 
 </android.support.v7.widget.Toolbar>

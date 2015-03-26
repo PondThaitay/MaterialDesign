@@ -11,7 +11,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    
+
     <style name="MyToolBar" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">#FFD600</item>
         <item name="android:textColorSecondary">#FFEA00</item>
