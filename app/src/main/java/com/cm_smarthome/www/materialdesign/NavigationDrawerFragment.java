@@ -72,7 +72,7 @@ public class NavigationDrawerFragment extends Fragment {
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
                 if(slideOffset < 0.6) {
-                    toolbar.setAlpha(1 - slideOffset);
+                    toolbar.setAlpha(1 - slideOffset/2);
                 }
             }
         };

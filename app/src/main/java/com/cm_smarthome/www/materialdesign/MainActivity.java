@@ -18,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_appber);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         toolbar.setLogo(R.drawable.up_logo);
