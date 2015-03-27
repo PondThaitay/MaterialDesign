@@ -1,9 +1,9 @@
 package com.cm_smarthome.www.materialdesign;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
 
         NavigationDrawerFragment navigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.NavigationDrawer);
-        navigationDrawerFragment.setUp(R.id.NavigationDrawer,(DrawerLayout) findViewById(R.id.drawer_layout),toolbar);
+        navigationDrawerFragment.setUp(R.id.NavigationDrawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
     }
 
 
@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(context,"OK",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show();
             return true;
         }
 

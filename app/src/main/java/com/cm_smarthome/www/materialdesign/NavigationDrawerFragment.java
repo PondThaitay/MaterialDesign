@@ -1,15 +1,14 @@
 package com.cm_smarthome.www.materialdesign;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private RecyclerView recyclerView;
     public static final String PREF_FILE_NAME = "testpref";
-    public static final String KEY_USER_LEARNED_DEAWER= "user_learned_drawer";
+    public static final String KEY_USER_LEARNED_DEAWER = "user_learned_drawer";
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
 
@@ -42,9 +41,9 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mUserLearnedDrawer = Boolean.valueOf(readFromPreference(getActivity(),KEY_USER_LEARNED_DEAWER,"false"));
+        mUserLearnedDrawer = Boolean.valueOf(readFromPreference(getActivity(), KEY_USER_LEARNED_DEAWER, "false"));
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             mFromSaveInstanceState = true;
         }
     }
@@ -53,23 +52,22 @@ public class NavigationDrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View layout =  inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+        View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
-        adapter = new VivzAdapter(getActivity(),getData());
+        adapter = new VivzAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        return  layout;
+        return layout;
     }
 
-    public static List<information> getData(){
+    public static List<information> getData() {
         List<information> data = new ArrayList<>();
-        int[] icon = {R.drawable.study_icon,R.drawable.test_icon,R.drawable.activity_icon,R.drawable.historygrade_icon
-                        ,R.drawable.caculator_icon,R.drawable.glow_icon,R.drawable.place_icon,R.drawable.chart_icon};
-        String[] titles = {"ตารางเรียน","ตารางสอบ","ชั่วโมงกิจกรรม","เกรดที่ผ่านมา","ทดลองคำนวณเกรด"
-                            ,"กราฟชีวิต","ติดต่อเรา","เกี่ยวกับแอพ"};
+        int[] icon = {R.drawable.study_icon, R.drawable.test_icon, R.drawable.activity_icon, R.drawable.historygrade_icon
+                , R.drawable.caculator_icon, R.drawable.glow_icon, R.drawable.place_icon, R.drawable.chart_icon};
+        String[] titles = {"ตารางเรียน", "ตารางสอบ", "ชั่วโมงกิจกรรม", "เกรดที่ผ่านมา", "ทดลองคำนวณเกรด"
+                , "กราฟชีวิต", "ติดต่อเรา", "เกี่ยวกับแอพ"};
 
-        for(int i =0; i < titles.length && i < icon.length; i++)
-        {
+        for (int i = 0; i < titles.length && i < icon.length; i++) {
             information current = new information();
             current.iconId = icon[i];
             current.title = titles[i];
@@ -77,16 +75,17 @@ public class NavigationDrawerFragment extends Fragment {
         }
         return data;
     }
-    public void setUp(int fragmentId,DrawerLayout drawerLayout, final Toolbar toolbar) {
+
+    public void setUp(int fragmentId, DrawerLayout drawerLayout, final Toolbar toolbar) {
         containerView = getView().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
-        mDrawerToggle = new ActionBarDrawerToggle(getActivity(),drawerLayout,toolbar,R.string.drawer_open,R.string.drawer_close){
+        mDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                if(!mUserLearnedDrawer){
+                if (!mUserLearnedDrawer) {
                     mUserLearnedDrawer = true;
-                    saveToPreferences(getActivity(), KEY_USER_LEARNED_DEAWER,mUserLearnedDrawer+"");
+                    saveToPreferences(getActivity(), KEY_USER_LEARNED_DEAWER, mUserLearnedDrawer + "");
                 }
                 getActivity().invalidateOptionsMenu();
             }
@@ -100,13 +99,13 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-                if(slideOffset < 0.6) {
-                    toolbar.setAlpha(1 - slideOffset/2);
+                if (slideOffset < 0.6) {
+                    toolbar.setAlpha(1 - slideOffset / 2);
                 }
             }
         };
 
-        if(!mUserLearnedDrawer && !mFromSaveInstanceState){
+        if (!mUserLearnedDrawer && !mFromSaveInstanceState) {
             mDrawerLayout.openDrawer(containerView);
 
         }
@@ -119,14 +118,15 @@ public class NavigationDrawerFragment extends Fragment {
         });
     }
 
-    public static void saveToPreferences(Context context, String perferenceName, String perferenceValue){
+    public static void saveToPreferences(Context context, String perferenceName, String perferenceValue) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(perferenceName,perferenceValue);
+        editor.putString(perferenceName, perferenceValue);
         editor.apply();
     }
-    public static String readFromPreference(Context context, String perferenceName, String defaultValue){
+
+    public static String readFromPreference(Context context, String perferenceName, String defaultValue) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(perferenceName,defaultValue);
+        return sharedPreferences.getString(perferenceName, defaultValue);
     }
 }

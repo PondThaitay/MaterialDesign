@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 /**
  * Created by AdminPond on 26/3/2558.
  */
-public class information extends RecyclerView.Adapter{
+public class information extends RecyclerView.Adapter {
     int iconId;
     String title;
 

@@ -1,49 +1,48 @@
-<android.support.v4.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
 
     <RelativeLayout
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.cm_smarthome.www.materialdesign.MainActivity"
-        android:background="#6dafafaf">
+        android:background="#6dafafaf"
+        android:fitsSystemWindows="true"
+        tools:context="com.cm_smarthome.www.materialdesign.MainActivity">
 
         <include
             android:id="@+id/app_bar"
             layout="@layout/app_bar" />
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world"
             android:layout_below="@+id/app_bar"
             android:layout_centerHorizontal="true"
-            android:id="@+id/textView2" />
+            android:text="@string/hello_world" />
 
         <Button
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="New Button"
-            android:id="@+id/button"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="47dp" />
+            android:layout_marginTop="47dp"
+            android:text="New Button" />
     </RelativeLayout>
 
     <fragment
         android:id="@+id/NavigationDrawer"
+        android:name="com.cm_smarthome.www.materialdesign.NavigationDrawerFragment"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:layout="@layout/fragment_navigation_drawer"
-        android:name="com.cm_smarthome.www.materialdesign.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
