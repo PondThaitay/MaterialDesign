@@ -102,14 +102,13 @@ public class LoginActivity extends FragmentActivity {
                 Toast.makeText(context, incorrect, Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             } else {
+                progressDialog.dismiss();
+                Toast.makeText(context, correct, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(context, MainActivity.class);
                 i.putExtra("Username", u1.username);
                 i.putExtra("Name", u1.name);
                 i.putExtra("Email", u1.email);
                 startActivity(i);
-                progressDialog.dismiss();
-                Toast.makeText(context, correct, Toast.LENGTH_SHORT).show();
-                Log.e("", u1.username + u1.name + u1.email);
             }
         }
     }
