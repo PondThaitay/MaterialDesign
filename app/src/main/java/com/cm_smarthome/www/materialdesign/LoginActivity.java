@@ -14,10 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Created by AdminPond on 28/3/2558.
+ */
+public class LoginActivity extends Activity {
 
-public class login extends Activity {
-
-    user u1 = new user();
+    UserData u1 = new UserData();
 
     Context context = this;
 
@@ -87,7 +89,7 @@ public class login extends Activity {
                 u1.CheckLogin(et_Username.getText().toString(), et_Password.getText().toString());
                 result = u1.statusLogin;
             } catch (Exception e) {
-                Log.e("Error","AsyncTask Activity Login");
+                Log.e("Error", "AsyncTask Activity Login");
             }
             return result;
         }

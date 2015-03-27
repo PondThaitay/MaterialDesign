@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by AdminPond on 27/3/2558.
+ * Created by AdminPond on 28/3/2558.
  */
-public class user {
+public class UserData {
 
     protected String username;
     protected String name;
