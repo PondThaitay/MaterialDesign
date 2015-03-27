@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,10 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
     private boolean mFromSaveInstanceState;
     private View containerView;
+
+    private EditText etUserName;
+    private EditText etName;
+    private EditText etEmail;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor

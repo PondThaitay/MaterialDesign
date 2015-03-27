@@ -51,15 +51,18 @@
                 android:weightSum="1">
 
                 <EditText
-                    android:id="@+id/et_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:id="@+id/et_username"
+                    android:layout_gravity="center_horizontal"
                     android:background="@drawable/custom_edittext"
                     android:hint="รหัสนิสิต"
                     android:textColor="@android:color/white"
-                    android:textColorHint="#E1BEE7"
                     android:textCursorDrawable="@drawable/white_cursor"
-                    android:textSize="18sp" />
+                    android:textColorHint="#E1BEE7"
+                    android:textSize="18sp"
+                    android:inputType="number" />
 
                 <EditText
                     android:id="@+id/et_password"
@@ -69,11 +72,12 @@
                     android:background="@drawable/custom_edittext"
                     android:ems="10"
                     android:hint="รหัสผ่าน"
-                    android:inputType="textPassword"
                     android:textColor="@android:color/white"
                     android:textColorHint="#E1BEE7"
                     android:textCursorDrawable="@drawable/white_cursor"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:layout_gravity="center_horizontal"
+                    android:inputType="numberPassword" />
 
                 <Button
                     android:id="@+id/btn_login"

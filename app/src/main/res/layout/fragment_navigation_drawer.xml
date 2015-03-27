@@ -43,7 +43,8 @@
                 android:gravity="right"
                 android:text="นายเจษฎา ทิวงค์วรกุล"
                 android:textColor="@android:color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:id="@+id/tvUsername" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -51,7 +52,8 @@
                 android:gravity="right"
                 android:text="รหัสนิสิต : 55021744"
                 android:textColor="@android:color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:id="@+id/tvName" />
 
             <View
                 android:layout_width="match_parent"
@@ -64,7 +66,8 @@
                 android:gravity="right"
                 android:text="pondthaitay@gmail.com"
                 android:textColor="@android:color/white"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:id="@+id/tvEmail" />
         </LinearLayout>
 
     </LinearLayout>
