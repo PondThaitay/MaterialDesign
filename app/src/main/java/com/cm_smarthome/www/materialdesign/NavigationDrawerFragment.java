@@ -65,15 +65,15 @@ public class NavigationDrawerFragment extends Fragment {
         return layout;
     }
 
-    public static List<information> getData() {
-        List<information> data = new ArrayList<>();
+    public static List<InformationSet> getData() {
+        List<InformationSet> data = new ArrayList<>();
         int[] icon = {R.drawable.study_icon, R.drawable.test_icon, R.drawable.activity_icon, R.drawable.historygrade_icon
                 , R.drawable.caculator_icon, R.drawable.glow_icon, R.drawable.place_icon, R.drawable.chart_icon};
         String[] titles = {"ตารางเรียน", "ตารางสอบ", "ชั่วโมงกิจกรรม", "เกรดที่ผ่านมา", "ทดลองคำนวณเกรด"
                 , "กราฟชีวิต", "ติดต่อเรา", "เกี่ยวกับแอพ"};
 
         for (int i = 0; i < titles.length && i < icon.length; i++) {
-            information current = new information();
+            InformationSet current = new InformationSet();
             current.iconId = icon[i];
             current.title = titles[i];
             data.add(current);

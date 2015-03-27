@@ -18,9 +18,9 @@ public class VivzAdapter extends RecyclerView.Adapter<VivzAdapter.MyViewHolder> 
 
     private Context context;
     private LayoutInflater inflater;
-    List<information> data = Collections.emptyList();
+    List<InformationSet> data = Collections.emptyList();
 
-    public VivzAdapter(Context context, List<information> data) {
+    public VivzAdapter(Context context, List<InformationSet> data) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -35,7 +35,7 @@ public class VivzAdapter extends RecyclerView.Adapter<VivzAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        information current = data.get(position);
+        InformationSet current = data.get(position);
         holder.title.setText(current.title);
         holder.icon.setImageResource(current.iconId);
     }

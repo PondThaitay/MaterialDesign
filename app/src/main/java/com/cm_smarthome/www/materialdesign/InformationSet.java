@@ -4,9 +4,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 /**
- * Created by AdminPond on 26/3/2558.
+ * Created by AdminPond on 28/3/2558.
  */
-public class information extends RecyclerView.Adapter {
+public class InformationSet extends RecyclerView.Adapter {
     int iconId;
     String title;
 
