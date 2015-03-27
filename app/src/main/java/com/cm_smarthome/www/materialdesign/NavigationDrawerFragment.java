@@ -12,16 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class NavigationDrawerFragment extends Fragment {
+
+    UserData u1 = new UserData();
 
     private RecyclerView recyclerView;
     public static final String PREF_FILE_NAME = "testpref";
@@ -34,10 +33,6 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
     private boolean mFromSaveInstanceState;
     private View containerView;
-
-    private EditText etUserName;
-    private EditText etName;
-    private EditText etEmail;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor
@@ -58,6 +53,20 @@ public class NavigationDrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
+
+        MainActivity activity = (MainActivity) getActivity();
+        String username = activity.getUsernameToFragment();
+        String name = activity.getNameToFragment();
+        String email = activity.getEmailToFragment();
+
+        TextView tvUsername = (TextView) layout.findViewById(R.id.tvUsername);
+        TextView tvName = (TextView) layout.findViewById(R.id.tvName);
+        TextView tvEmail = (TextView) layout.findViewById(R.id.tvEmail);
+
+        tvUsername.setText("รหัสนิสิต : "+username);
+        tvName.setText(name);
+        tvEmail.setText(email);
+
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
         adapter = new VivzAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);

@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class UserData {
 
-    protected String username;
+    static String username;
     protected String name;
     protected String email;
     protected String statusLogin;

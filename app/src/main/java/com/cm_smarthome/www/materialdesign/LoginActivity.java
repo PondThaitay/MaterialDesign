@@ -1,11 +1,11 @@
 package com.cm_smarthome.www.materialdesign;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 /**
  * Created by AdminPond on 28/3/2558.
  */
-public class LoginActivity extends Activity {
+public class LoginActivity extends FragmentActivity {
 
     UserData u1 = new UserData();
 
@@ -103,6 +103,9 @@ public class LoginActivity extends Activity {
                 progressDialog.dismiss();
             } else {
                 Intent i = new Intent(context, MainActivity.class);
+                i.putExtra("Username", u1.username);
+                i.putExtra("Name", u1.name);
+                i.putExtra("Email", u1.email);
                 startActivity(i);
                 progressDialog.dismiss();
                 Toast.makeText(context, correct, Toast.LENGTH_SHORT).show();

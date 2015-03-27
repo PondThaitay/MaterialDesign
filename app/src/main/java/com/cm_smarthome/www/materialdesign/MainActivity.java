@@ -1,13 +1,17 @@
 package com.cm_smarthome.www.materialdesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import java.util.AbstractCollection;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -15,11 +19,16 @@ public class MainActivity extends ActionBarActivity {
     Context context = this;
     private Toolbar toolbar;
 
+    private String username;
+    private String name;
+    private String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_appber);
 
+        getUsernameToFragment();
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         toolbar.setLogo(R.drawable.up_logo);
         toolbar.setTitle("มหาวิทยาลัยพะเยา");
@@ -55,4 +64,23 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public String getUsernameToFragment(){
+        Intent intent = getIntent();
+        username = intent.getStringExtra("Username");
+        return username;
+    }
+
+    public String getNameToFragment(){
+        Intent intent = getIntent();
+        name = intent.getStringExtra("Name");
+        return name;
+    }
+
+    public String getEmailToFragment(){
+        Intent intent = getIntent();
+        email = intent.getStringExtra("Email");
+        return email;
+    }
+
 }
